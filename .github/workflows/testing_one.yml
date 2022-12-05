@@ -6,7 +6,9 @@ jobs:
     steps:
       - name: downloading repo
         uses: actions/checkout@v3
-      - name: Install Dependencies
-        run: npm ci
-      - name: testing
-        run: npm test
+      - name: cypress
+        uses: cypress-io/github-action@v5.0.0
+        with:
+          browser: chrome
+          headless: true
+          
